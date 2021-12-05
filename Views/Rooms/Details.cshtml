@@ -1,0 +1,54 @@
+﻿@model RighteousGloryHotel.Models.Room
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Room</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.floor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.floor)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.roomNo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.roomNo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.image)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.image)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.balconyView)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.balconyView)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.bed)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.bed)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.roomDescription)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.roomDescription)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.roomId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

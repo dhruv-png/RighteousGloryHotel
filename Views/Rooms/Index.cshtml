@@ -1,0 +1,70 @@
+﻿@model IEnumerable<RighteousGloryHotel.Models.Room>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.floor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.roomNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.balconyView)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.bed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.roomDescription)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.floor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.roomNo)
+            </td>
+            <td>
+                @if (item.image != null)
+                {
+            <img src="~/img/planet/@item.image" alt="Room pic" width="60" height="60" class="thumb" /> }
+                            else
+                            {
+            <img src="~/img/rooms/placeholder.gif" alt="Room pic" class="thumb" />}
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.balconyView)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.bed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.roomDescription)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.roomId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.roomId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.roomId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
