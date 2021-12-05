@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -10,8 +11,10 @@ using Microsoft.EntityFrameworkCore;
 using RighteousGloryHotel.Data;
 using RighteousGloryHotel.Models;
 
+
 namespace RighteousGloryHotel.Controllers
 {
+    [Authorize]
     public class RoomsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -28,6 +31,7 @@ namespace RighteousGloryHotel.Controllers
         }
 
         // GET: Rooms/Details/5
+        [AllowAnonymous]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
